@@ -1,83 +1,369 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<link rel="icon" type="image/x-icon" href="favicon_circle.ico">
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>موقع السرعة للانترنت</title>
-  <!-- رابط Font Awesome للأيقونات -->
+  
+
+<!-- أيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #f0f4ff, #f9fbff);
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(90deg, #007bff, #00d4ff);
+      color: white;
+      animation: fadeInDown 1s ease;
+    }
+
+    /* شريط التنقل */
+    .navbar {
+      background: #222;
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .navbar a:hover {
+      color: #28a745;
+      text-shadow: 0 0 8px #28a745;
+    }
+
+    /* الباقات */
+    .package-section {
+      border: 2px solid #ddd;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 30px;
+      background: #fff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease;
+    }
+
+    .package-section h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* المربعات */
+    .icon-box {
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      width: 220px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+      display: block;
+      background: linear-gradient(135deg, #ffffff, #f0f9ff);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      animation: zoomIn 0.7s ease;
+    }
+
+    .icon-box:hover {
+      transform: scale(1.08) rotate(1deg);
+      background: linear-gradient(135deg, #28a745, #32cd32);
+      color: white;
+      box-shadow: 0 0 20px rgba(40,167,69,0.7);
+    }
+
+    .icon-box i {
+      font-size: 38px;
+      margin-bottom: 12px;
+      color: #007bff;
+      transition: 0.3s;
+    }
+
+    .icon-box:hover i {
+      color: #fff;
+      transform: rotate(10deg) scale(1.2);
+    }
+
+    /* تواصل */
+    #contact {
+      text-align: center;
+    }
+    #contact a div:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #333;
+      color: white;
+      margin-top: 30px;
+    }
+
+    /* انيميشن */
+    @keyframes fadeInUp {
+      from {opacity:0; transform:translateY(40px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+    @keyframes fadeInDown {
+      from {opacity:0; transform:translateY(-40px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+    @keyframes zoomIn {
+      from {opacity:0; transform:scale(0.8);}
+      to {opacity:1; transform:scale(1);}
+    }
+    /* التعليمات */
+    .instructions {
+      background: #fff;
+      border: 2px solid #ddd;
+      border-radius: 15px;
+      padding: 25px;
+      margin: 40px 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .instructions h2 {
+      text-align: center;
+      color: #007bff;
+    }
+    .instructions ol {
+      font-size: 1.1em;
+      line-height: 1.8;
+      margin: 20px;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
-  <!-- رأس الصفحة -->
+
+  <!-- رأس -->
   <header>
-    <div class="container">
-      <h1>السرعة للانترنت</h1>
-      <p>مع السرعه...العالم أقرب اليك🛜</p>
-      <p>الضمان والجودة شعارنا🌟</p>
-    </div>
+    <h1>السرعة للانترنت</h1>
+    <p>مع السرعه...العالم أقرب اليك 🛜</p>
+    <p>الضمان والجودة شعارنا 🌟</p>
   </header>
 
   <!-- شريط التنقل -->
   <nav class="navbar">
-    <a href="#home">الرئيسية</a>
-    <a href="#services">الخدمات</a>
-    <a href="#contact">تواصل</a>
+    <a href="#monthly">📦 الشهرية</a>
+    <a href="#unlimited">♾️ اللامحدودة</a>
+    <a href="#instructions">📘 التعليمات</a>
+    <a href="#contact">📞 تواصل</a>
   </nav>
 
-  <!-- قسم الخدمات مع أيقونات -->
-  <main class="container" id="home">
-    <section id="services">
-      <h2>باقات الإنترنت</h2>
-      <div class="grid">
-
-        <div class="icon-box">
-          <i class="fa-solid fa-bolt"></i>
-          <h3>باقة سريعة 10GB</h3>
-          <p>مدة: 7 أيام</p>
-          <p>السعر: 3.5 ر.ع</p>
-          <a href="https://wa.me/96877470055?text=الاسم%3A%20باقة%20سريعة%2010GB%0Aالمدة%3A%207%20أيام%0Aالسعر%3A%203.5%20ر.ع" target="_blank">
-            <button>اشترك الآن</button>
-          </a>
-        </div>
-
-        <div class="icon-box">
-          <i class="fa-solid fa-bolt-lightning"></i>
-          <h3>باقة شهرية 50GB</h3>
-          <p>مدة: 30 يوم</p>
-          <p>السعر: 10 ر.ع</p>
-          <a href="https://wa.me/96877470055?text=الاسم%3A%20باقة%20شهرية%2050GB%0Aالمدة%3A%2030%20يوم%0Aالسعر%3A%2010%20ر.ع" target="_blank">
-            <button>اشترك الآن</button>
-          </a>
-        </div>
-
-        <div class="icon-box">
-          <i class="fa-solid fa-infinity"></i>
-          <h3>باقة غير محدودة</h3>
-          <p>مدة: 30 يوم</p>
-          <p>السعر: 20 ر.ع</p>
-          <a href="https://wa.me/96877470055?text=الاسم%3A%20باقة%20غير%20محدودة%0Aالمدة%3A%2030%20يوم%0Aالسعر%3A%2020%20ر.ع" target="_blank">
-            <button>اشترك الآن</button>
-          </a>
-        </div>
-
+  <!-- الباقات الشهرية -->
+  <section class="package-section" id="monthly">
+    <h2>📦 الباقات الشهرية</h2>
+    <div class="grid">
+      <div class="icon-box" data-link="https://wa.me/96877470055?text=أرغب%20في%20شراء%20باقة%2010GB%20-%203%20ر.ع">
+        <i class="fa-solid fa-bolt-lightning"></i>
+        <h3>باقة شهرية 10 GB</h3>
+        <p>مدة: 30 يوم</p>
+        <p>السعر: 3 ر.ع</p>
       </div>
-    </section>
+      <div class="icon-box" data-link="https://wa.me/96877470055?text=أرغب%20في%20شراء%20باقة%2010GB%20ب%203%20ر.ع">
+        <i class="fa-solid fa-bolt-lightning"></i>
+        <h3>باقة شهرية 20 GB</h3>
+        <p>مدة: 30 يوم</p>
+        <p>السعر: 5 ر.ع</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- نموذج تواصل بسيط -->
-    <section id="contact">
-      <h2>تواصل معنا</h2>
-      <form id="contactForm">
-        <input type="text" id="name" placeholder="الاسم" required>
-        <input type="email" id="email" placeholder="البريد الإلكتروني" required>
-        <textarea id="message" placeholder="رسالتك" required></textarea>
-        <button type="submit">إرسال</button>
-      </form>
-    </section>
-  </main>
+  <!-- الباقات اللامحدودة -->
+  <section class="package-section" id="unlimited">
+    <h2>♾️ الباقات اللامحدودة</h2>
+    <div class="grid">
+      <div class="icon-box" data-link="https://wa.me/96877470055?text=أرغب%20في%20شراء%20باقة%20لامحدودة%20-%2010%20أيام%20-%205%20ر.ع">
+        <i class="fa-solid fa-infinity"></i>
+        <h3>باقة لا محدودة</h3>
+        <p>مدة: 10 يوم</p>
+        <p>السعر: 5 ر.ع</p>
+      </div>
+      <div class="icon-box" data-link="https://wa.me/96877470055?text=أرغب%20في%20شراء%20باقة%20لامحدودة%20-%2020%20يوم%20-%2010%20ر.ع">
+        <i class="fa-solid fa-infinity"></i>
+        <h3>باقة لا محدودة</h3>
+        <p>مدة: 20 يوم</p>
+        <p>السعر: 10 ر.ع</p>
+      </div>
+      <div class="icon-box" data-link="https://wa.me/96877470055?text=أرغب%20في%20شراء%20باقة%20لامحدودة%20-%2030%20يوم%20-%2013%20ر.ع">
+        <i class="fa-solid fa-infinity"></i>
+        <h3>باقة لا محدودة</h3>
+        <p>مدة: 30 يوم</p>
+        <p>السعر: 13 ر.ع</p>
+      </div>
+    </div>
+  </section>
 
+
+
+
+  </div>
+</section>
+
+<style>
+.sponsored-ad-section {
+  background: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.sponsored-ad-section h2 {
+  color: #ff5722;
+  margin-bottom: 15px;
+}
+
+.sponsored-ad img {
+  max-width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sponsored-ad img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+</style>
+
+<!-- التعليمات -->
+<section class="instructions" id="instructions">
+  <h2>📘 خطوات تفعيل الشريحة الإلكترونية eSIM</h2>
+
+  <!-- iPhone -->
+  <h3> لأجهزة iPhone:</h3>
+  <ol>
+    <li>تأكد أن هاتفك يدعم eSIM وأنه محدث إلى آخر نسخة iOS.</li>
+    <li>اذهب إلى <strong>الإعدادات &gt; الخلوية &gt; اضافة شريحه الكترونية</strong>.</li>
+    <li>امسح رمز QR الذي حصلت عليه من مزود الخدمة باستخدام كاميرا الهاتف.</li>
+    <li>اتبع التعليمات لإكمال إضافة الخطة.</li>
+  </ol>
+
+  <!-- Android -->
+  <h3> لأجهزة Android:</h3>
+  <ol>
+    <li>تأكد أن هاتفك يدعم eSIM وأنه محدث إلى آخر نسخة أندرويد.</li>
+    <li>اذهب إلى <strong>الإعدادات &gt; الشبكة والإنترنت &gt; إضافة خطة خلوية</strong> (قد تختلف المسميات حسب الجهاز).</li>
+    <li>اختر <strong>مسح رمز QR</strong> وامسح الرمز الذي حصلت عليه من مزود الخدمة.</li>
+    <li>اتبع التعليمات لإكمال إضافة الخطة.</li>
+  </ol>
+<h3 style="color:red;">تنبيه مهم جدا :</h3>
+<ol style="color:red;">
+  <li>قبل شراء الشريحه يجب عليك التاكد بأن هاتفك يدعم شرائح eSIM</li>
+  <li>عند شراء الشريحه لا يمكن استرجاعها او استبدالها</li>
+  <li>لا يمكن استرجاع المبلغ بعد تسليم الشريحه</li>
+  <li>لا يمكن حذف الشريحه واعادة تثبيتها مره اخرى</li>
+  <li>بعد التفعيل يجب التاكد بتفعيل (تجوال البيانات)</li>
+</ol>
+
+
+
+    </ol>
+</section>
+
+<!-- تواصل -->
+<section id="contact" class="package-section">
+  <h2>📞 تواصل معنا</h2>
+  <div class="social-container">
+
+    <!-- واتساب -->
+    <a href="https://wa.me/96877470055" target="_blank" class="social-link whatsapp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- إنستغرام -->
+    <a href="https://instagram.com/your_username" target="_blank" class="social-link instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+  </div>
+</section>
+
+<style>
+.social-container {
+  display: flex;
+  justify-content: center; /* مركزية الأيقونات أفقياً */
+  gap: 15px; /* مسافة بين الأيقونات */
+  margin-top: 10px;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  font-size: 28px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.whatsapp {
+  background: #25D366;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #feda75, #d62976, #962fbf, #4f5bd5);
+}
+</style>
+
+
+  <!-- فوتر -->
   <footer>
     <p>© 2025 جميع الحقوق محفوظة</p>
   </footer>
+
+  <!-- جافاسكربت -->
+  <script>
+    // عند الضغط على المربع يفتح رابط الواتساب + يغير لونه
+    document.querySelectorAll(".icon-box").forEach(box => {
+      box.addEventListener("click", () => {
+        box.classList.add("active");
+        window.open(box.getAttribute("data-link"), "_blank");
+        setTimeout(() => box.classList.remove("active"), 1500);
+      });
+    });
+  </script>
+
 </body>
 </html>
